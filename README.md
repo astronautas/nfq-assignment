@@ -13,4 +13,4 @@ HTML, CSS3 and Javascript were main markup and language tools used for developin
 * jQuery (for Backbone $el. Also greatly simplified interaction with DOM).
 * R.js (for building - bundling and minifying application)
 
-Application can be launched by opening index.html
+The project took approximately 6 hours of working time. Application can be launched by opening index.html
