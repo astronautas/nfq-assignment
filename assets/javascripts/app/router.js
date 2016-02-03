@@ -3,28 +3,30 @@ function(Backbone, UsersPageView, GroupsPageView) {
   var AppRouter = Backbone.Router.extend({
     routes: {
       '(/)'    : 'usersPage',
-      'users'  : 'usersPage',
-      'groups' : 'groupsPage'
+      '(/)users'  : 'usersPage',
+      '(/)groups' : 'groupsPage'
     },
 
     usersPage: function() {
-      this.loadPage(new UsersPageView({ el: '.js-app' }));
+      this.loadPage(UsersPageView);
     },
 
     groupsPage: function() {
-      this.loadPage(new GroupsPageView({ el: '.js-app' }));
+      this.loadPage(GroupsPageView);
     },
 
-    loadPage: function(view) {
-      console.log('Load');
+    loadPage: function(View) {
       // Destroy (dereference) old (current) view and its subviews
       // If the view has its own close function, call it. Otherwise, use remove
       if (this.view) {
-        this.view.close ? this.view.close() :  this.view.remove()
+        this.view.close ? this.view.close() : this.view.remove();
       }
-      
-      // New view becomes the current view
-      this.view = view;
+
+      // Create app container, and use it as el for page view
+      $('body').append('<div class="content js-app clearfix"></div>');
+
+      // Create new view
+      this.view = new View({ el: '.js-app'});
     }
   });
 

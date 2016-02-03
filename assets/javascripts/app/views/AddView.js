@@ -1,17 +1,21 @@
-define(['jquery', 'backbone', 'underscore', 'text!app/views/templates/AddItemView.html'], 
-function($, Backbone, _, AddItemViewTpl) {
+define(['jquery', 'backbone', 'underscore', 'app/collections/GroupsCollection', 
+        'text!app/views/templates/AddUserView.html', 'text!app/views/templates/AddGroupView.html'], 
+function($, Backbone, _, GroupsCollection, AddUserTpl, AddGroupTpl) {
   var AddItemView = Backbone.View.extend({
-    template: _.template(AddItemViewTpl),
+    userTemplate:  _.template(AddUserTpl),
+    groupTemplate: _.template(AddGroupTpl),
 
     events: {
       'click .js-item-submit' : 'submitItem'
     },
 
     initialize: function(options) {
-      _.bindAll(this, 'submitItem');
+      _.bindAll(this, 'submitItem', 'invalidForm');
 
       this.options    = options || {};
       this.collection = this.options.collection;
+
+      this.listenTo(this.collection, 'invalid', this.invalidForm);
 
       if (this.options.type === 'user') {
         this.renderAddUser();
@@ -20,17 +24,36 @@ function($, Backbone, _, AddItemViewTpl) {
       }
     },
 
+    allGroups: function() {
+      var list = [];
+      var groups = new GroupsCollection();
+
+      groups.fetch({
+        success: function() {
+          _.each(groups.models, function(model) {
+            list.push({
+              id: model.get('id'),
+              name: model.get('name')
+            });
+          });
+        }
+      });
+
+      return list;
+    },
+
     renderAddUser: function() {
+      var groups = this.allGroups();
+
       // Pass in groups collection to be able to render
       // group selection for user
-      this.$el.append(this.template({
-        attributes: ['name', 'surname', 'birthDate', 'profilePicture', 'bio'],
-        groups: [1, 4, 5]
+      this.$el.append(this.userTemplate({
+        groups: groups
       }));
     },
 
     renderAddGroup: function() {
-      this.$el.append(this.template({
+      this.$el.append(this.groupTemplate({
         attributes: ['name', 'description']
       }));
     },
@@ -60,9 +83,16 @@ function($, Backbone, _, AddItemViewTpl) {
 
       // When collected, create model for collection
       // with these values
-      console.log(model);
-      this.collection.create(model);
-    }
+      var that = this;
+      this.collection.create(model, { validate: true, success: function() {
+        that.$el.find('.js-add-item').remove();
+      }});
+    },
+
+    invalidForm: function() {
+      this.$el.find('.js-item-form').addClass('invalid');
+    },
+
   });
 
   return AddItemView;

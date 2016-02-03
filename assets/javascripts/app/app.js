@@ -1,9 +1,9 @@
 requirejs.config({
   baseUrl: '.',
   paths: {
-    'jquery'       : 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min',
-    'backbone'     : 'https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min',
-    'underscore'   : 'https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min',
+    'jquery'       : 'app/libs/jquery-min',
+    'backbone'     : 'app/libs/backbone-min',
+    'underscore'   : 'app/libs/underscore-min',
     'text'         : 'app/libs/text',
     'localstorage' : 'app/libs/backbone.localStorage-min'
   }

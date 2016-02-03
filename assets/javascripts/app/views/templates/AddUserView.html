@@ -1,0 +1,39 @@
+<div class="add-item js-add-item">
+  <div class="full-width-height-overlay">
+  <div class="add-item-form fully-centered border-box js-item-form">
+    <div class="clearfix">
+      <div class="left column-6">Vardas: </div> 
+      <input class="left border-box column-6" type="text" name="name" />
+    </div>
+
+    <div class="clearfix">
+      <div class="left column-6">Pavardė: </div> 
+      <input class="left border-box column-6" type="text" name="surname" />
+    </div>
+
+    <div class="clearfix">
+      <div class="left column-6">Gimimo data: </div> 
+      <input class="left border-box column-6" type="text" name="birthDate" />
+    </div>
+
+    <div class="clearfix">
+      <div class="left column-6">Sakinys apie žmogų: </div> 
+      <input class="left border-box column-6" type="text" name="bio" />
+    </div>
+
+    <div class="clearfix">
+      <div class="left column-6">Profilio nuotraukos adresas: </div> 
+      <input class="left border-box column-6" type="text" name="profilePicture" />
+    </div>
+
+    <fieldset>
+      <legend>Grupės</legend>
+
+      <% _.each(groups, function(group) { %>
+        <input type="checkbox" name="group" value="<%= group.id %>" /><%= group.name %><br />
+      <% }); %>
+    </fieldset>
+
+    <div class="text-center m-top"><div class="action-button action-button--red js-item-submit">Pridėti</div></div>
+  </div>
+</div>

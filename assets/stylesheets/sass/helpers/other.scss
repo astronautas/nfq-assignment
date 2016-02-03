@@ -11,3 +11,15 @@
 .clearfix {
   zoom: 1; /* ie 6/7 */
 }
+
+// Cursors
+.pointer {
+  cursor: pointer
+}
+
+// Mobile helper
+@mixin respond-to-mobiles() {
+  @media (max-width: 680px) {
+     @content;
+  }
+}

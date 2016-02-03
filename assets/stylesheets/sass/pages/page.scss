@@ -3,6 +3,21 @@
   font-weight: 100;
   color: $color-black;
   text-transform: uppercase;
+
+  @include respond-to-mobiles() {
+    display: block;
+    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.add-item-button {
+  text-align: center;
+  @include respond-to-mobiles() {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 
 .add-item-form {
@@ -13,4 +28,33 @@
   width: 100%;
   z-index: 300;
   background: $color-yellow;
+  transition: opacity 0.5s;
+
+  &.invalid {
+    outline: 3px solid $color-red;
+  }
+
+  &.visible {
+    opacity: 1;
+  }
+}
+
+.list {
+  padding: 0;
+}
+
+.list-item {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  border-bottom: 1px solid $color-light-grey;
+
+  @include respond-to-mobiles() {
+    font-size: 16px;
+  }
+}
+
+.avatar {
+  width: 20px;
+  height: auto;
 }
