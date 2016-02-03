@@ -1,0 +1,19 @@
+/**
+ * NFQ Front-End Challenge - User Management System Styles
+ * Author: Lukas Valatka
+ * Date: 16/02/03
+ * This is the main sass stylesheets file. All other files are imported, and later on compiled
+ * and minified into a single stylesheet styles.css in /stylesheets directory
+ */
+
+// Base
+@import "base/normalize";
+@import "base/colors";
+@import "base/fonts";
+
+// Helpers
+@import "helpers/containers";
+@import "helpers/positioning";
+
+// Pages
+@import "header";
