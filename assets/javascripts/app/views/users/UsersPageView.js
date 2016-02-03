@@ -1,5 +1,5 @@
-define(['jquery', 'backbone', 'underscore', 'app/collections/UsersCollection', 
-        'text!app/views/users/templates/UsersPageView.html', 'app/views/AddView', 'app/views/users/UsersListView'], 
+define(['jquery', 'backbone', 'underscore', 'collections/UsersCollection', 
+        'text!views/users/templates/UsersPageView.html', 'views/AddView', 'views/users/UsersListView'], 
 function($, Backbone, _,  UsersCollection, UsersPageViewTpl, AddView, UsersListView)  {
   var UsersPageView = Backbone.View.extend({
     template: _.template(UsersPageViewTpl),

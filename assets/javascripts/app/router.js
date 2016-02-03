@@ -1,4 +1,4 @@
-define(['backbone', 'app/views/users/UsersPageView', 'app/views/groups/GroupsPageView'], 
+define(['backbone', 'views/users/UsersPageView', 'views/groups/GroupsPageView'], 
 function(Backbone, UsersPageView, GroupsPageView) {
   var AppRouter = Backbone.Router.extend({
     routes: {

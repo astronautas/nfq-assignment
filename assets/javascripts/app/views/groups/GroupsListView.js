@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'underscore', 'app/views/groups/GroupItemView'], function($, Backbone, _, GroupItemView) {
+define(['jquery', 'backbone', 'underscore', 'views/groups/GroupItemView'], function($, Backbone, _, GroupItemView) {
   var GroupsListView = Backbone.View.extend({
 
     initialize: function(options) {

@@ -1,15 +1,15 @@
 requirejs.config({
   baseUrl: '.',
   paths: {
-    'jquery'       : 'app/libs/jquery-min',
-    'backbone'     : 'app/libs/backbone-min',
-    'underscore'   : 'app/libs/underscore-min',
-    'text'         : 'app/libs/text',
-    'localstorage' : 'app/libs/backbone.localStorage-min'
+    'jquery'       : 'libs/jquery-min',
+    'backbone'     : 'libs/backbone-min',
+    'underscore'   : 'libs/underscore-min',
+    'text'         : 'libs/text',
+    'localstorage' : 'libs/backbone.localStorage-min'
   }
 });
 
-require(['jquery', 'backbone', 'app/router'], function($, Backbone, Router) {
+require(['jquery', 'backbone', 'router'], function($, Backbone, Router) {
   $(document).ready(function() {
     var router = new Router();
 

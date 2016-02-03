@@ -1,5 +1,5 @@
-define(['jquery', 'backbone', 'underscore', 'app/collections/GroupsCollection', 
-        'text!app/views/templates/AddUserView.html', 'text!app/views/templates/AddGroupView.html'], 
+define(['jquery', 'backbone', 'underscore', 'collections/GroupsCollection', 
+        'text!views/templates/AddUserView.html', 'text!views/templates/AddGroupView.html'], 
 function($, Backbone, _, GroupsCollection, AddUserTpl, AddGroupTpl) {
   var AddItemView = Backbone.View.extend({
     userTemplate:  _.template(AddUserTpl),

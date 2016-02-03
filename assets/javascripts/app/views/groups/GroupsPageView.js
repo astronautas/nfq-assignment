@@ -1,5 +1,5 @@
-define(['jquery', 'backbone', 'underscore', 'app/collections/GroupsCollection', 
-        'text!app/views/groups/templates/GroupsPageView.html', 'app/views/AddView', 'app/views/groups/GroupsListView'], 
+define(['jquery', 'backbone', 'underscore', 'collections/GroupsCollection', 
+        'text!views/groups/templates/GroupsPageView.html', 'views/AddView', 'views/groups/GroupsListView'], 
 function($, Backbone, _,  GroupsCollection, GroupsPageViewTpl, AddView, GroupsListView)  {
   var GroupsPageView = Backbone.View.extend({
     template: _.template(GroupsPageViewTpl),

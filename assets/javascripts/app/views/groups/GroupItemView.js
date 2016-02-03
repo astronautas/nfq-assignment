@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'underscore', 'text!app/views/groups/templates/GroupItemView.html'], 
+define(['jquery', 'backbone', 'underscore', 'text!views/groups/templates/GroupItemView.html'], 
 function($, Backbone, _, ItemTpl) {
   var GroupItemView = Backbone.View.extend({
     template  : _.template(ItemTpl),

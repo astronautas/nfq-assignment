@@ -1,4 +1,4 @@
-define(['jquery', 'backbone', 'underscore', 'app/views/users/UserItemView'], function($, Backbone, _, UserItemView) {
+define(['jquery', 'backbone', 'underscore', 'views/users/UserItemView'], function($, Backbone, _, UserItemView) {
   var UsersListView = Backbone.View.extend({
 
     initialize: function(options) {

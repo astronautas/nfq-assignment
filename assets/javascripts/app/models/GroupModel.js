@@ -1,4 +1,4 @@
-define(['backbone', 'underscore', 'app/collections/UsersCollection'], 
+define(['backbone', 'underscore', 'collections/UsersCollection'], 
 function(Backbone, _, UsersCollection) {
   var GroupModel = Backbone.Model.extend({
     membersCount: function() {
