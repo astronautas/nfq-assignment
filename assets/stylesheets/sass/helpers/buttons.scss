@@ -1,0 +1,16 @@
+.action-button {
+  display: inline-block;
+  padding: 10px;
+  color: $color-white;
+  text-transform: uppercase;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.action-button--red {
+  background: $color-red;
+
+  &:hover {
+    background: $color-light-red;
+  }
+}

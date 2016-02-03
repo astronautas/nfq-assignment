@@ -5,3 +5,13 @@
 .inline-block {
   display: inline-block;
 }
+
+.full-width-height-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba($color-black, 0.8);
+  z-index: 200;
+}
