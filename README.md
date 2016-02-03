@@ -14,4 +14,6 @@ HTML5, CSS3, Javascript were used as primary means of constructing application. 
   * R.js (for compiling and minifying application via node.js)
 
 I have also used SASS to organize stylesheets. BEM methodology was used for classes' naming.
-It took about 6 hours to make the application.
+It took about 6 hours to make the application (it is raw programming and planning time, breaks are not included).
+##### Launching the app
+Simply download the contents and open index.html with your favourite browser.
